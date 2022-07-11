@@ -1,17 +1,6 @@
 import  './sidebar.css';
 import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 function SideBar() {
-  const [cat,setCat] = useState([]);
-  useEffect(() => {
-   (async() => {
-      const res = await axios.get('/categories');
-      setCat(res.data);
-    })();
-  }, [])
-  
-
   return (
     <div className='sidebar'>
         <div className="sidebarItem">
@@ -24,22 +13,21 @@ function SideBar() {
         <div className="sidebarItem">
             <span className="sidebarTitle">CATEGORIES</span>
             <ul className='sidebarList'>
-              {
-                cat.map((c,index)=> (
-                  <Link className='link'key={index} to={`/?cat=${c.name}`}>
-                    <li className="sidebarListItem" >{c.name}</li>
-                  </Link>
-                ))
-              }
+                <li className="sidebarListItem"><Link className='link' to="/post/life">Life</Link></li>
+                <li className="sidebarListItem"><Link className='link' to="/post/music">Music</Link></li>
+                <li className="sidebarListItem"><Link className='link' to="/post/style">Style</Link></li>
+                <li className="sidebarListItem"><Link className='link' to="/post/sport">Sport</Link></li>
+                <li className="sidebarListItem"><Link className='link' to="/post/tech">Tech</Link></li>
+                <li className="sidebarListItem"><Link className='link' to="/post/cinema">Cinema</Link></li>
             </ul>
         </div>
         <div className="sidebarItem">
             <span className="sidebarTitle">FOLLOW US</span>
             <div className="sidebarSocial">
-                <i className="siderbarIcon fa-brands fa-facebook"></i>
-                <i className="siderbarIcon fa-brands fa-twitter"></i>
-                <i className="siderbarIcon fa-brands fa-instagram"></i>
-                <i className="siderbarIcon fa-brands fa-linkedin"></i>
+                <i class="siderbarIcon fa-brands fa-facebook"></i>
+                <i class="siderbarIcon fa-brands fa-twitter"></i>
+                <i class="siderbarIcon fa-brands fa-instagram"></i>
+                <i class="siderbarIcon fa-brands fa-linkedin"></i>
             </div>
         </div> 
     </div>

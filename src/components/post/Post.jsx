@@ -1,30 +1,22 @@
 import  './post.css';
 import { Link } from "react-router-dom";
-function Post({post}) {
-  const imageFolder = "http://localhost:5000/images/";
+function Post() {
   return (
-   
     <div className='post'>
-      {post.photo && (
-        <Link className='link' to={`/post/${post._id}`}>
-        <img className='postImg' src={imageFolder + post.photo} alt="...nopic" />
-        </Link>
-      )}
+        <img className='postImg' src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="..." />
     <div className="postInfo">
         <div className="postCats">
-          {
-            post.categories.map((cat,index) => (
-              <span className="postCat" key={index}><Link className='link' to={`/post/${cat._id}`}>{cat.name}</Link></span>
-            ))
-          }
+            <span className="postCat"><Link className='link' to="/post/music">Music</Link></span>
+            <span className="postCat"><Link className='link' to="/post/life">Life</Link></span>
         </div>
-        <Link className='link' to={`/post/${post._id}`}>
-          <span className="postTitle">{post.title}</span>
-        </Link>        
+        <span className="postTitle">lorem ipsum dolro sit amet</span>
         <hr />
-        <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
+        <span className="postDate">1 hour ago</span>
     </div>
-    <p className='postDesc'>{post.desc}</p>
+    <p className='postDesc'>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aperiam praesentium deleniti suscipit earum illo quas modi eligendi, iusto quibusdam minima harum in quisquam incidunt soluta fugit explicabo saepe dolorum!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aperiam praesentium deleniti suscipit earum illo quas modi eligendi, iusto quibusdam minima harum in quisquam incidunt soluta fugit explicabo saepe dolorum!
+    </p>
     
     </div>
   )

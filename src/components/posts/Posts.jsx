@@ -1,20 +1,16 @@
 import Post from '../post/Post'
 import './posts.css'
 
-function Posts({ posts }) {
+function Posts() {
   return (
     <div className='posts'>
-      {
-        posts.length > 0 ? (
-          posts.map((p,index) => (
-            <Post post={p} key={index} />
-          ))
-        ) : <div className='noData'>
-             No data found!!!!
-          </div>
-      }      
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
     </div>
-  );
+  )
 }
 
 export default Posts
